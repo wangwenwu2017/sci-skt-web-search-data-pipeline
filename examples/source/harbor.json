@@ -1,0 +1,6 @@
+{
+  "execution": {"mode": "harbor", "max_concurrency": 1},
+  "search_provider": "tavily",
+  "search_timeout_sec": 60,
+  "policy_version": "source-v1"
+}

@@ -1,0 +1,76 @@
+{
+  "currency": "USD",
+  "status": "planning_estimate_not_measured",
+  "candidates": 100,
+  "expected_qualified_tasks": 70.0,
+  "expected_rollouts": 1960.0,
+  "stages": {
+    "author": {
+      "expected_calls": 100,
+      "model": "sol",
+      "api_usd": 140.0,
+      "vcpu_hours": 200.0,
+      "gib_hours": 800.0
+    },
+    "review": {
+      "expected_calls": 100,
+      "model": "sol",
+      "api_usd": 48.0,
+      "vcpu_hours": 16.666666666666668,
+      "gib_hours": 33.333333333333336
+    },
+    "repair": {
+      "expected_calls": 30.0,
+      "model": "sol",
+      "api_usd": 26.4,
+      "vcpu_hours": 40.0,
+      "gib_hours": 160.0
+    },
+    "qualification": {
+      "expected_calls": 100,
+      "model": null,
+      "api_usd": 0.0,
+      "vcpu_hours": 66.66666666666667,
+      "gib_hours": 133.33333333333334
+    },
+    "solver": {
+      "expected_calls": 1960.0,
+      "model": "flash",
+      "api_usd": 246.96,
+      "vcpu_hours": 3920.0,
+      "gib_hours": 7840.0
+    },
+    "verifier": {
+      "expected_calls": 1960.0,
+      "model": null,
+      "api_usd": 0.0,
+      "vcpu_hours": 326.6666666666667,
+      "gib_hours": 653.3333333333334
+    }
+  },
+  "api_usd": 461.36,
+  "api_with_contingency_usd": 599.768,
+  "api_per_qualified_task_usd": 6.590857142857143,
+  "vcpu_hours": 4570.0,
+  "gib_hours": 9620.0,
+  "infrastructure_costs_usd": {
+    "vcpu_hour": null,
+    "gib_hour": null,
+    "storage_gb_month": null
+  },
+  "modeled_total_usd": null,
+  "modeled_total_cny": null,
+  "solver_only_wall_hours": 47.11538461538461,
+  "required_solver_input_tpm": 208000.0,
+  "required_solver_output_tpm": 20800.0,
+  "excluded": [
+    "staff",
+    "GPU",
+    "always-on services",
+    "idle reserved nodes",
+    "network",
+    "extra cold builds",
+    "cache/long-context/tier pricing adjustments"
+  ],
+  "warning": "Null costs are unpriced, not free. Qualified counts are expectations. Add rejected-task calibration and re-reviews explicitly. CPU pricing uses reserved resource-hours."
+}

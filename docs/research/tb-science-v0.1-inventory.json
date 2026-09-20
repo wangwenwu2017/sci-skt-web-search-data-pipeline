@@ -1,0 +1,708 @@
+{
+  "version": "v0.1.0",
+  "commit": "f81afac4f11048e77a15dfc8fb1dbfb897fea0ce",
+  "task_count": 70,
+  "review_scope": "All instruction.md and task.toml; selected README sections; no solver executions or full verifier audit.",
+  "tasks": [
+    {
+      "task": "sparse-network-assimilation",
+      "path": "tasks/earth-sciences/atmospheric-sciences/sparse-network-assimilation/instruction.md",
+      "instruction_sha256": "f75d7f5ee9cbb83a128ae879ebf5bfcd71f0413d1d67d669b99d9e36b3c6f245",
+      "expert_time_estimate_hours": 18.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "hysteretic-aquifer-control",
+      "path": "tasks/earth-sciences/environmental-sciences/hysteretic-aquifer-control/instruction.md",
+      "instruction_sha256": "e86697b325b4ce804d59a99de111037b1e53d5d041d5c06754fb81c58419a4d1",
+      "expert_time_estimate_hours": 12,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "duan-thesis",
+      "path": "tasks/earth-sciences/geosciences/duan-thesis/instruction.md",
+      "instruction_sha256": "bb069ee36509b8f09f9f9134a7bb42d173425a5c72cc769a5abb7a5b1f3feada",
+      "expert_time_estimate_hours": 12,
+      "cpus": 1,
+      "memory_mb": 2048,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "hbv-calibration-1",
+      "path": "tasks/earth-sciences/geosciences/hbv-calibration-1/instruction.md",
+      "instruction_sha256": "3d474d4948847bb06138fefef9d739439702a1ed092d790ed91db514fdcd4197",
+      "expert_time_estimate_hours": 16,
+      "cpus": 4,
+      "memory_mb": 2048,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "mendota-ice-phenology",
+      "path": "tasks/earth-sciences/geosciences/mendota-ice-phenology/instruction.md",
+      "instruction_sha256": "d496cf14cda317e7f099076f7447605793c74cd42bcf5a5cbc54726fae344108",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "stereo-dem-icesat2",
+      "path": "tasks/earth-sciences/geosciences/stereo-dem-icesat2/instruction.md",
+      "instruction_sha256": "d0da06af6bb5f4f8445014effaf5bf1d5dc7c3ff5f44636800060310a27e4aaa",
+      "expert_time_estimate_hours": 14.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "supraglacial-lake-classification",
+      "path": "tasks/earth-sciences/geosciences/supraglacial-lake-classification/instruction.md",
+      "instruction_sha256": "69f1e6c1e930df26ff529554e488309b1dd994a96fcbc1c663eb6361680271a1",
+      "expert_time_estimate_hours": 1.6,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "masked-spherical-remap",
+      "path": "tasks/earth-sciences/ocean-sciences/masked-spherical-remap/instruction.md",
+      "instruction_sha256": "e01922be0e9647e1aeb5aec1151dcaf59cd9115ff0b79321b7e1670ef78b8556",
+      "expert_time_estimate_hours": 18.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "reactor-safety-control",
+      "path": "tasks/engineering-sciences/chemical-engineering/reactor-safety-control/instruction.md",
+      "instruction_sha256": "1719df35e4c4f22da2b210b789db2a53debb817e06901b1ca393e4eebf3b69a6",
+      "expert_time_estimate_hours": 14.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "rolling-shutter-oma",
+      "path": "tasks/engineering-sciences/civil-engineering/rolling-shutter-oma/instruction.md",
+      "instruction_sha256": "b631f1c8b2ae82005453b4f4cfb439c7b3d91d07d3be795671f0ffdae913bd1f",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "microarch-modeling",
+      "path": "tasks/engineering-sciences/electrical-engineering/microarch-modeling/instruction.md",
+      "instruction_sha256": "60dad3ebac3a7b1d28ebca2f3c6564f5a80fdc832b86ed76b17979a94f14481d",
+      "expert_time_estimate_hours": 16.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "navigation-sensor-calibration",
+      "path": "tasks/engineering-sciences/electrical-engineering/navigation-sensor-calibration/instruction.md",
+      "instruction_sha256": "8dee8d544ec28fb73b2786425c35402ef3ab4f6d320bd13329f506df2be46497",
+      "expert_time_estimate_hours": 32.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "baseline-free-localization",
+      "path": "tasks/engineering-sciences/mechanical-engineering/baseline-free-localization/instruction.md",
+      "instruction_sha256": "98ab9e0b413b9cccfa8475a8fa6f5923245f4091caca3e4113ac25d74726df8a",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "guided-wave-localization",
+      "path": "tasks/engineering-sciences/mechanical-engineering/guided-wave-localization/instruction.md",
+      "instruction_sha256": "24a19ba689461e795af784e0e33bc6a50d03a53d4bf938c7f5919232853a167a",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "inelastic-constitutive-discovery",
+      "path": "tasks/engineering-sciences/mechanical-engineering/inelastic-constitutive-discovery/instruction.md",
+      "instruction_sha256": "562f5b17cfb5936c984934f7ed7a0147337349960fca1ef5e59fb147215c5edf",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "tamp-skill-planning",
+      "path": "tasks/engineering-sciences/mechanical-engineering/tamp-skill-planning/instruction.md",
+      "instruction_sha256": "82113f0b579165f9ee9a59653de61a0f545d8e4c7873f7a1c9eb22fb8d3bac87",
+      "expert_time_estimate_hours": 6.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "virtual-baseline-localization",
+      "path": "tasks/engineering-sciences/mechanical-engineering/virtual-baseline-localization/instruction.md",
+      "instruction_sha256": "0233edc3cb5a28ea8ca719bb353ce8180b5c44fa78da0659f851510e4f07032b",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "ambient-rna-correction",
+      "path": "tasks/life-sciences/biology/ambient-rna-correction/instruction.md",
+      "instruction_sha256": "5bde17ef9978661b98735701951581ae496c16b1b807cc888ac896d8a7fdd106",
+      "expert_time_estimate_hours": 10,
+      "cpus": 4,
+      "memory_mb": 12288,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "betalactam-multimodal-transfer",
+      "path": "tasks/life-sciences/biology/betalactam-multimodal-transfer/instruction.md",
+      "instruction_sha256": "51f845477f7f75b86e118075a6f5ccf618bf43ce1f7ff0634b8d99108845017b",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "cell-lineage-reconstruction",
+      "path": "tasks/life-sciences/biology/cell-lineage-reconstruction/instruction.md",
+      "instruction_sha256": "a0fc4d083fa6620b7c7f50da4828cbb7d3b1fcf758500d1192e67f5adb17128f",
+      "expert_time_estimate_hours": 8.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "cilia-segmentation",
+      "path": "tasks/life-sciences/biology/cilia-segmentation/instruction.md",
+      "instruction_sha256": "5521139bf5296eb5bc9887faa7908a1d9484e1d4dd7906d6599b468a944f83e3",
+      "expert_time_estimate_hours": 2.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "diag-chipseq",
+      "path": "tasks/life-sciences/biology/diag-chipseq/instruction.md",
+      "instruction_sha256": "6f1835e6801c8fae8b5f7581199f10968c126feecf6ade67abbaedcd5741f7c5",
+      "expert_time_estimate_hours": 5.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "genomic-model-ranking",
+      "path": "tasks/life-sciences/biology/genomic-model-ranking/instruction.md",
+      "instruction_sha256": "c3edd1be672b557611fd59819a2151d56c6f8d4242cfbca86c84fb4393f4b7d8",
+      "expert_time_estimate_hours": 5.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "ont-tn-qc",
+      "path": "tasks/life-sciences/biology/ont-tn-qc/instruction.md",
+      "instruction_sha256": "88c6db474d9eef6140aa47da9d53b24546b0bc307c468e4f7e4db76f0ef08033",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 4,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "protein-active-learning",
+      "path": "tasks/life-sciences/biology/protein-active-learning/instruction.md",
+      "instruction_sha256": "85c97d56cb097325f86659cfdd61afb3fb650d74949de90d7a8441719048e7b6",
+      "expert_time_estimate_hours": 8.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "animal-reid",
+      "path": "tasks/life-sciences/ecology/animal-reid/instruction.md",
+      "instruction_sha256": "97ef6ee6cbf941e18febe20677784bc4745f96aa9212e4082ba61958f10eb6ff",
+      "expert_time_estimate_hours": 8.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "ankle-mri-findings",
+      "path": "tasks/life-sciences/medicine/ankle-mri-findings/instruction.md",
+      "instruction_sha256": "8fd5b24ce87fc7dfa354e462448d70f3b7632557f328f3247e1fdd7016ed834a",
+      "expert_time_estimate_hours": 3.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "clinical-metadata-recovery",
+      "path": "tasks/life-sciences/medicine/clinical-metadata-recovery/instruction.md",
+      "instruction_sha256": "dd81273327bad0e86be45555fa60ebf561f1d70cfddacfea7abb25b31d876787",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "dapi-he-alignment",
+      "path": "tasks/life-sciences/medicine/dapi-he-alignment/instruction.md",
+      "instruction_sha256": "1f8720b3271ba0c7438800093967e3d34478699a2ba2010d6c103c7f3202c486",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "longitudinal-clinical-agent",
+      "path": "tasks/life-sciences/medicine/longitudinal-clinical-agent/instruction.md",
+      "instruction_sha256": "ebfa849d6a8355cafe56b2ed03ae7411cf757508a6631c483483e59363fe4428",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 1,
+      "memory_mb": 2048,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "spatial-cell-annotation",
+      "path": "tasks/life-sciences/medicine/spatial-cell-annotation/instruction.md",
+      "instruction_sha256": "2ca2a014e1c47349907d6ea6ed55ab06cc9f6e55786290e8826d16435d9cfd1e",
+      "expert_time_estimate_hours": 3.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "tumor-immune-interface",
+      "path": "tasks/life-sciences/medicine/tumor-immune-interface/instruction.md",
+      "instruction_sha256": "d5ce6a0ca0a64e305a1b7cfcd4049e1dde6d5b2898120d19949fe5ed821f0e04",
+      "expert_time_estimate_hours": 8.0,
+      "cpus": 2,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "eeg-erp-recovery",
+      "path": "tasks/life-sciences/neuroscience/eeg-erp-recovery/instruction.md",
+      "instruction_sha256": "a5c4a974d08a03afa1f7b98abeeb2289059e79fa466d3096634e33c9a81f38fc",
+      "expert_time_estimate_hours": 8.5,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "foraging-cognitive-model",
+      "path": "tasks/life-sciences/neuroscience/foraging-cognitive-model/instruction.md",
+      "instruction_sha256": "5bcb64d0100e50d66836ef0e29f91c6e2ef9c7c0bb6e7dd2e0a96bb6eaf5a846",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 4,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "mri-harmonization",
+      "path": "tasks/life-sciences/neuroscience/mri-harmonization/instruction.md",
+      "instruction_sha256": "8374497cd03e38cbf234ffed2575fe844a14d0f72da1f4a9c0e1e94d60311df5",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "qsm-reconstruction",
+      "path": "tasks/life-sciences/neuroscience/qsm-reconstruction/instruction.md",
+      "instruction_sha256": "0b93f84257342bd662b42484ea359ee85b388133f0142dd2844ebf6ddff30f3d",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 4,
+      "memory_mb": 2048,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "amr-poisson-optimize",
+      "path": "tasks/mathematical-sciences/applied-mathematics/amr-poisson-optimize/instruction.md",
+      "instruction_sha256": "68322e80969cc37597f6344eeea2d68c58a0e3cb96bc8175d9e3a3f10563009c",
+      "expert_time_estimate_hours": 8,
+      "cpus": 4,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "dna-storage-codec",
+      "path": "tasks/mathematical-sciences/applied-mathematics/dna-storage-codec/instruction.md",
+      "instruction_sha256": "d6b07945e3482a15e2d6b30ce14341778e1ca0ec87bea8e1fe8ef9928e8e9562",
+      "expert_time_estimate_hours": 12,
+      "cpus": 1,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "koopman-mfg-id",
+      "path": "tasks/mathematical-sciences/applied-mathematics/koopman-mfg-id/instruction.md",
+      "instruction_sha256": "e75945db875bb8d9c9c712b86a484944a492fd99ab267d51bee237b37218bb7f",
+      "expert_time_estimate_hours": 32.0,
+      "cpus": 4,
+      "memory_mb": 12288,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "localized-sspd-solver",
+      "path": "tasks/mathematical-sciences/applied-mathematics/localized-sspd-solver/instruction.md",
+      "instruction_sha256": "ac187f2ac235690d5bec1913cd38a3b91869929c4026277dcd0a45a9aba8f624",
+      "expert_time_estimate_hours": 6.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "ode-law-discovery",
+      "path": "tasks/mathematical-sciences/applied-mathematics/ode-law-discovery/instruction.md",
+      "instruction_sha256": "d1f1e45625b031ba6a637d1d6b5fbad0cdea33cd72a2529893d09ca520a478e1",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "traffic-flux-inversion",
+      "path": "tasks/mathematical-sciences/applied-mathematics/traffic-flux-inversion/instruction.md",
+      "instruction_sha256": "769e90d563f3d3792b6971bdbd85891a6604ebc26ae850ae1d63344683e7cc9c",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 2,
+      "memory_mb": 2048,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "finite-free-stam",
+      "path": "tasks/mathematical-sciences/formal-mathematics/finite-free-stam/instruction.md",
+      "instruction_sha256": "dd13583ab3ff8a37dcb0434492fe3ab2de6f4804a45d4bb9c7078d9058e0001d",
+      "expert_time_estimate_hours": 50,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "gen-turan-paths",
+      "path": "tasks/mathematical-sciences/formal-mathematics/gen-turan-paths/instruction.md",
+      "instruction_sha256": "d0834723c7ad1c76f0dc7e5e3d09d650cc0485d6889cb1c399e2581b24ec7789",
+      "expert_time_estimate_hours": 40.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "onsager-ising-lean",
+      "path": "tasks/mathematical-sciences/formal-mathematics/onsager-ising-lean/instruction.md",
+      "instruction_sha256": "4cb60eb5c62deeb378e5353f311d12adb25b593e214898ae9d91bbb04f7dccd1",
+      "expert_time_estimate_hours": 600.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "certified-sparse-regression",
+      "path": "tasks/mathematical-sciences/operations-research/certified-sparse-regression/instruction.md",
+      "instruction_sha256": "c6d2c047d2814220c16099adae16a95655bb8659bc42518c1ef2726b1077aa1a",
+      "expert_time_estimate_hours": 20.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "energy-routing",
+      "path": "tasks/mathematical-sciences/operations-research/energy-routing/instruction.md",
+      "instruction_sha256": "217bd3677db6c18f9baca8c0565e2132a1d883cdbcd5231123ce1fd081c931c9",
+      "expert_time_estimate_hours": 4.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "linked-cell-suppression",
+      "path": "tasks/mathematical-sciences/operations-research/linked-cell-suppression/instruction.md",
+      "instruction_sha256": "22550611a53b169e9eafccd91421c1fc898a274dc47d1ce90b2b577f706fe620",
+      "expert_time_estimate_hours": 24.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "noisy-blackbox-optimization",
+      "path": "tasks/mathematical-sciences/operations-research/noisy-blackbox-optimization/instruction.md",
+      "instruction_sha256": "4ecc5a5ee0bbe59a82582ab78fc37995f4bf3325179f6f54242db826639cce6d",
+      "expert_time_estimate_hours": 8.0,
+      "cpus": 4,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "regularized-game-proof",
+      "path": "tasks/mathematical-sciences/operations-research/regularized-game-proof/instruction.md",
+      "instruction_sha256": "674ec43473d267381cd4b098558a3e843d558f69791b10a30ccef4949540a9f2",
+      "expert_time_estimate_hours": 24.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "highdim-mediation-debiasing",
+      "path": "tasks/mathematical-sciences/statistics/highdim-mediation-debiasing/instruction.md",
+      "instruction_sha256": "e22c04eeeaacb9043b283d61737d3cff5b945fcadd072a2eaad584d55e31fa9c",
+      "expert_time_estimate_hours": 32.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "small-area-equivalence",
+      "path": "tasks/mathematical-sciences/statistics/small-area-equivalence/instruction.md",
+      "instruction_sha256": "f7c8e4921bbc80df35a17718c180ff2bd90b4386c16052c8b760f1565224bc34",
+      "expert_time_estimate_hours": 60.0,
+      "cpus": 2,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "symbolic-regression",
+      "path": "tasks/mathematical-sciences/statistics/symbolic-regression/instruction.md",
+      "instruction_sha256": "c1b323fa445a75ef075fac55bb83a16abc6ad5992a0f2314c929ee8d6b4f6369",
+      "expert_time_estimate_hours": 2.0,
+      "cpus": 1,
+      "memory_mb": 2048,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "3x2pt-inference",
+      "path": "tasks/physical-sciences/astronomy/3x2pt-inference/instruction.md",
+      "instruction_sha256": "cf3f42677a6db42c68593e7b8283198e01172b9cc87827bdeeae3a1a212c2dd8",
+      "expert_time_estimate_hours": 16,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "cmb-cross-inference",
+      "path": "tasks/physical-sciences/astronomy/cmb-cross-inference/instruction.md",
+      "instruction_sha256": "807aaf88926970e12656104cea6c04dc3dfa8f2e45638fcbd7ac8538850a7bd9",
+      "expert_time_estimate_hours": 30.0,
+      "cpus": 4,
+      "memory_mb": 16384,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "neo-orbit-determination",
+      "path": "tasks/physical-sciences/astronomy/neo-orbit-determination/instruction.md",
+      "instruction_sha256": "24262f8b933dd8aa3b4cd62e2bb2a9e2175ee640603525a20487287b87b0a68e",
+      "expert_time_estimate_hours": 8.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "rv-astrometry-fitting",
+      "path": "tasks/physical-sciences/astronomy/rv-astrometry-fitting/instruction.md",
+      "instruction_sha256": "3a8145a936ba44a6664068584b2a75422a23c90166cb93042877c46ad45dc5e0",
+      "expert_time_estimate_hours": 20.0,
+      "cpus": 4,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "tess-transit-vetting",
+      "path": "tasks/physical-sciences/astronomy/tess-transit-vetting/instruction.md",
+      "instruction_sha256": "f083b3f9a12c12639b1f3b029f7202f84628a851d17a19ab880ee5a5654843c8",
+      "expert_time_estimate_hours": 8.0,
+      "cpus": 2,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "variable-star-vetting",
+      "path": "tasks/physical-sciences/astronomy/variable-star-vetting/instruction.md",
+      "instruction_sha256": "718cc18a482846385125d92882426bd1c1abf8732d3fd95982698a8751649c18",
+      "expert_time_estimate_hours": 3.0,
+      "cpus": 2,
+      "memory_mb": 2048,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "geometric-pharmacophore-alignment",
+      "path": "tasks/physical-sciences/chemistry/geometric-pharmacophore-alignment/instruction.md",
+      "instruction_sha256": "dd0023a3e041eef7f6a6eacb84c88086099c82e28ac53266bbc47b4044f3eaaf",
+      "expert_time_estimate_hours": 8.0,
+      "cpus": 4,
+      "memory_mb": 2048,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "rdkit-ic-constraints",
+      "path": "tasks/physical-sciences/chemistry/rdkit-ic-constraints/instruction.md",
+      "instruction_sha256": "9d6c7813977c8dba0c1c68ce176fcb2583e35b02e5b62240b6b8e507c014e285",
+      "expert_time_estimate_hours": 24.0,
+      "cpus": 4,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "nanoindentation-property-extraction",
+      "path": "tasks/physical-sciences/materials-science/nanoindentation-property-extraction/instruction.md",
+      "instruction_sha256": "30b8f7673bd206ffd00e80515e96c61514192cf31e6fc55ca1aa163984c432cb",
+      "expert_time_estimate_hours": 6.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "si-fracture-fbc",
+      "path": "tasks/physical-sciences/materials-science/si-fracture-fbc/instruction.md",
+      "instruction_sha256": "6ded1b2389c5135cecd39f29f9510044bfd693c58dbea445fec2f68946682cad",
+      "expert_time_estimate_hours": 16.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "stacking-disorder-diffraction",
+      "path": "tasks/physical-sciences/materials-science/stacking-disorder-diffraction/instruction.md",
+      "instruction_sha256": "e5723acc3e0907cb6a9a11bf5876d7a04ce7f7fdb46cac231923e1323ae21ae8",
+      "expert_time_estimate_hours": 16,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "xrd-multiphase-qpa",
+      "path": "tasks/physical-sciences/materials-science/xrd-multiphase-qpa/instruction.md",
+      "instruction_sha256": "41b30fe53dc9ba594875b566b3398e964e55cebb9df05cc96b1b9c0a9a3d25d6",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "frustrated-heisenberg-nqs",
+      "path": "tasks/physical-sciences/physics/frustrated-heisenberg-nqs/instruction.md",
+      "instruction_sha256": "9c4255947ca8e9475f4ac5185f98a0efaa294ff198fcd6d01c7b2b579f38e9fc",
+      "expert_time_estimate_hours": 6.0,
+      "cpus": 4,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "inverse-lithography",
+      "path": "tasks/physical-sciences/physics/inverse-lithography/instruction.md",
+      "instruction_sha256": "0a5b758ec1933d8fb2cb2d736dcb6a365c239a16aa2c1158fd0f0487231eade1",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 1,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "inverse-waveguide-shape",
+      "path": "tasks/physical-sciences/physics/inverse-waveguide-shape/instruction.md",
+      "instruction_sha256": "3bdff835cd50b0ef38154e2470f7f8c738257c563ccf9a95629564bb07361d3c",
+      "expert_time_estimate_hours": 80,
+      "cpus": 1,
+      "memory_mb": 8192,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "leaky-bloch-meep",
+      "path": "tasks/physical-sciences/physics/leaky-bloch-meep/instruction.md",
+      "instruction_sha256": "d9937f6569e3bc1e78bd7c8bf209f416c249511bd72d2a6f16f3169557e48dcd",
+      "expert_time_estimate_hours": 12.0,
+      "cpus": 4,
+      "memory_mb": 15360,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    },
+    {
+      "task": "spin-glass-groundstate",
+      "path": "tasks/physical-sciences/physics/spin-glass-groundstate/instruction.md",
+      "instruction_sha256": "60fc2b010333d38f8b2939a23ea840bdba682102a1ec7db39dfe5ee9c9f1e96c",
+      "expert_time_estimate_hours": 6.0,
+      "cpus": 4,
+      "memory_mb": 4096,
+      "gpus": 0,
+      "agent_timeout_sec": 28800.0
+    }
+  ]
+}

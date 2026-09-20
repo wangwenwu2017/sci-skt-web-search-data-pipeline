@@ -1,0 +1,6 @@
+{
+  "execution": {"mode": "mock", "max_concurrency": 2},
+  "search_provider": "tavily",
+  "search_timeout_sec": 60,
+  "policy_version": "source-v1"
+}

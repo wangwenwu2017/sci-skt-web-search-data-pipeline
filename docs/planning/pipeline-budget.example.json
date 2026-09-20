@@ -1,0 +1,33 @@
+{
+  "price_checked_on": "2026-09-16",
+  "currency": "USD",
+  "note": "Planning assumptions, not measured usage. CPU and memory rates are unknown until provided. Standard context and no cache discounts assumed.",
+  "candidates": 100,
+  "qualification_rate": 0.7,
+  "calibration_attempts": 8,
+  "production_attempts": 20,
+  "extra_attempts": 0,
+  "repair_calls_per_candidate": 0.3,
+  "contingency": 0.3,
+  "solver_concurrency": 32,
+  "utilization": 0.65,
+  "models": {
+    "flash": {"input_per_million": 0.3, "output_per_million": 1.2, "source": "https://api-docs.deepseek.com/quick_start/pricing/"},
+    "sol": {"input_per_million": 4.0, "output_per_million": 20.0, "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol"}
+  },
+  "stages": {
+    "author": {"model": "sol", "input_tokens": 200000, "output_tokens": 30000, "minutes": 30, "vcpu": 4, "memory_gib": 16},
+    "review": {"model": "sol", "input_tokens": 80000, "output_tokens": 8000, "minutes": 5, "vcpu": 2, "memory_gib": 4},
+    "repair": {"model": "sol", "input_tokens": 120000, "output_tokens": 20000, "minutes": 20, "vcpu": 4, "memory_gib": 16},
+    "qualification": {"model": null, "input_tokens": 0, "output_tokens": 0, "minutes": 10, "vcpu": 4, "memory_gib": 8},
+    "solver": {"model": "flash", "input_tokens": 300000, "output_tokens": 30000, "minutes": 30, "vcpu": 4, "memory_gib": 8},
+    "verifier": {"model": null, "input_tokens": 0, "output_tokens": 0, "minutes": 5, "vcpu": 2, "memory_gib": 4}
+  },
+  "infrastructure_prices": {
+    "vcpu_hour": null,
+    "gib_hour": null,
+    "storage_gb_month": null
+  },
+  "storage_gb_months": 2000,
+  "usd_to_cny": null
+}

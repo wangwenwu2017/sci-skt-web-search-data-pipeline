@@ -1,0 +1,10 @@
+name: sci-skt-pipeline
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.12
+  - pip
+  - uv=0.11.14
+# Conda owns Python and installation tools only.
+# Application dependencies are declared in pyproject.toml and locked in uv.lock.

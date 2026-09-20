@@ -1,0 +1,4 @@
+case_id,flow_m3_day,inlet_mg_l,outlet_mg_l
+a,1000,200,40
+b,500,100,25
+c,800,0,0

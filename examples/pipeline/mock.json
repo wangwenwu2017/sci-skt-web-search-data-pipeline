@@ -1,0 +1,9 @@
+{
+  "mode": "mock",
+  "tasks_per_package": 2,
+  "max_revisions": 1,
+  "max_concurrency": 2,
+  "role_timeout_sec": 600,
+  "mock_revise_once": true,
+  "generate_skills": false
+}
