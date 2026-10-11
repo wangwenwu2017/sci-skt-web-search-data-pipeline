@@ -14,6 +14,8 @@ class RunConfig(BaseModel):
     tasks_per_package: int = Field(default=1, ge=1, le=100)
     max_revisions: int = Field(default=1, ge=0, le=10)
     max_role_attempts: int = Field(default=2, ge=1, le=3)
+    api_retries: int = Field(default=2, ge=0, le=5)
+    api_retry_delay_sec: int = Field(default=5, ge=0, le=300)
     max_concurrency: int = Field(default=1, ge=1, le=16)
     role_timeout_sec: int = Field(default=1800, ge=30)
     validation_timeout_sec: int = Field(default=1800, ge=30)

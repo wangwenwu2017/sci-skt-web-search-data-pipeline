@@ -15,7 +15,9 @@ from .lifecycle import ExecutionSession, LifecycleError
 
 
 class HarborExecutionError(RuntimeError):
-    pass
+    def __init__(self, message: str, *, retryable: bool = False):
+        super().__init__(message)
+        self.retryable = retryable
 
 
 class HarborRunner:
@@ -184,7 +186,30 @@ class HarborRunner:
     def collect(self, result: dict, output: Path) -> None:
         if result.get("exception_info"):
             kind = result["exception_info"]["exception_type"]
-            raise HarborExecutionError(f"Role failed: {kind}; see Harbor trial logs")
+            # Only provider/transport evidence permits a new isolated role session.
+            # Generic agent exits, timeouts, authentication and scientific failures do not.
+            log = Path(result["local_trial_dir"]) / "agent" / "codex.txt"
+            diagnostic = log.read_text(errors="replace").lower() if log.is_file() else ""
+            retryable = (
+                kind == "ApiRateLimitError"
+                or kind == "NonZeroAgentExitCodeError"
+                and any(
+                    marker in diagnostic
+                    for marker in (
+                        "invalid_encrypted_content",
+                        "rate_limit_exceeded",
+                        "rate limit exceeded",
+                        "status 429",
+                        "status 502",
+                        "status 503",
+                        "stream disconnected",
+                        "connection reset",
+                    )
+                )
+            )
+            raise HarborExecutionError(
+                f"Role failed: {kind}; see Harbor trial logs", retryable=retryable
+            )
         source = Path(result["local_trial_dir"]) / "artifacts" / "output"
         if not source.is_dir():
             raise ValueError("Role did not return its output directory")

@@ -11,7 +11,7 @@ from sci_pipeline.artifacts import write_json
 from sci_pipeline.config import ApiSettings, RunConfig
 from sci_pipeline.contracts import TaskRequest
 from sci_pipeline.harbor_backend import HarborBackend
-from sci_pipeline.harbor_runner import HarborRunner
+from sci_pipeline.harbor_runner import HarborExecutionError, HarborRunner
 from sci_pipeline.mock import MockBackend
 from sci_pipeline.probe import IncorrectSubmissionAgent
 from sci_pipeline.usage import summarize_usage
@@ -157,6 +157,76 @@ class HarborAdapterTests(unittest.TestCase):
             backend.author(request, self.root, self.root / "author", 0, None, None)
         self.assertEqual(count, 2)
         self.assertTrue((self.root / "author/author-result.json").is_file())
+
+    def test_provider_retry_is_fresh_and_does_not_consume_handoff_attempts(self):
+        backend = HarborBackend(
+            RunConfig(mode="harbor", max_role_attempts=1, api_retries=2, api_retry_delay_sec=0),
+            self.api,
+            self.root,
+        )
+        request = TaskRequest(task_id="test-task", package_uri=str(self.root), variant=0)
+        runtimes = []
+
+        def role(role, output, inputs, instructions, runtime):
+            runtimes.append(runtime)
+            if len(runtimes) < 3:
+                raise HarborExecutionError("provider failed", retryable=True)
+            MockBackend().author(request, self.root, output, 0, None, None)
+
+        with patch.object(backend, "_role", side_effect=role):
+            backend.author(request, self.root, self.root / "author", 0, None, None)
+        self.assertEqual(len(set(runtimes)), 3)
+        self.assertTrue((runtimes[0] / "api-error.json").is_file())
+        self.assertTrue((self.root / "author/author-result.json").is_file())
+
+    def test_non_provider_failure_is_not_retried(self):
+        backend = HarborBackend(
+            RunConfig(mode="harbor", api_retry_delay_sec=0), self.api, self.root
+        )
+        with patch.object(
+            backend, "_role", side_effect=HarborExecutionError("Docker failed")
+        ) as called:
+            with self.assertRaises(HarborExecutionError):
+                backend._deliver("author", self.root / "out", {}, "", lambda _: None)
+        self.assertEqual(called.call_count, 1)
+
+    def test_provider_retry_limit_is_enforced(self):
+        backend = HarborBackend(
+            RunConfig(mode="harbor", api_retries=2, api_retry_delay_sec=0), self.api, self.root
+        )
+        with patch.object(
+            backend, "_role", side_effect=HarborExecutionError("provider", retryable=True)
+        ) as called:
+            with self.assertRaises(HarborExecutionError):
+                backend._deliver("author", self.root / "out", {}, "", lambda _: None)
+        self.assertEqual(called.call_count, 3)
+
+    def test_collect_classifies_provider_evidence_and_rejects_generic_exit(self):
+        log = self.root / "agent/codex.txt"
+        log.parent.mkdir()
+        result = {
+            "exception_info": {"exception_type": "NonZeroAgentExitCodeError"},
+            "local_trial_dir": str(self.root),
+        }
+        for diagnostic, expected in (
+            ("invalid_encrypted_content", True),
+            ("rate limit exceeded", True),
+            ("apply_patch: command not found", False),
+            ("HTTP 401 unauthorized", False),
+        ):
+            log.write_text(diagnostic)
+            with self.assertRaises(HarborExecutionError) as caught:
+                self.runner.collect(result, self.root / "output")
+            self.assertEqual(caught.exception.retryable, expected)
+
+    def test_native_rate_limit_type_is_retryable_without_generic_exit(self):
+        result = {
+            "exception_info": {"exception_type": "ApiRateLimitError"},
+            "local_trial_dir": str(self.root),
+        }
+        with self.assertRaises(HarborExecutionError) as caught:
+            self.runner.collect(result, self.root / "out")
+        self.assertTrue(caught.exception.retryable)
 
     def test_handoff_retry_limit_is_enforced(self):
         backend = HarborBackend(RunConfig(mode="harbor", max_role_attempts=2), self.api, self.root)

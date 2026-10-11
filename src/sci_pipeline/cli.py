@@ -144,6 +144,15 @@ def main() -> int:
     existing = args.resume or args.retry_failed or args.retry_skills
     config_path = existing / "run-config.json" if existing else args.config
     config = RunConfig.model_validate_json(config_path.read_text())
+    if not existing:
+        values = config.model_dump()
+        for field, name in (
+            ("api_retries", "SCI_PIPELINE_API_RETRIES"),
+            ("api_retry_delay_sec", "SCI_PIPELINE_API_RETRY_DELAY_SEC"),
+        ):
+            if name in os.environ:
+                values[field] = os.environ[name]
+        config = RunConfig.model_validate(values)
     runtime_report = None
     if config.mode == "harbor" or args.doctor or args.build_role_image:
         from .preflight import build_role_image, check

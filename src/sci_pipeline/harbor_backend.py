@@ -1,6 +1,7 @@
 """Production and optional skill roles use Harbor's existing Codex adapter."""
 
 import shutil
+import time
 from pathlib import Path
 
 from harbor.models.task.config import TaskConfig
@@ -8,7 +9,7 @@ from harbor.models.task.config import TaskConfig
 from .artifacts import candidate_from_output, copy_tree, read_json, safe_path, write_json
 from .config import ApiSettings, RunConfig
 from .contracts import BuildResult, ReviewResult, TaskRequest
-from .harbor_runner import HarborRunner
+from .harbor_runner import HarborExecutionError, HarborRunner
 
 
 class HarborBackend:
@@ -69,14 +70,38 @@ class HarborBackend:
         self.runner.collect(result, output)
 
     def _deliver(self, role, output, inputs, instructions, validate):
-        """Retry incomplete handoffs, not infrastructure errors or scientific decisions."""
+        """Separate bounded provider retries from handoff corrections and science revisions."""
         current_inputs = dict(inputs)
         correction = ""
         for attempt in range(self.config.max_role_attempts):
             runtime = output.parent / f"{role}-runtime" / f"attempt-{attempt:03d}"
             temporary = runtime / "output"
             try:
-                self._role(role, temporary, current_inputs, instructions + correction, runtime)
+                for api_attempt in range(self.config.api_retries + 1):
+                    try:
+                        self._role(
+                            role, temporary, current_inputs, instructions + correction, runtime
+                        )
+                        break
+                    except HarborExecutionError as exc:
+                        write_json(
+                            runtime / "api-error.json",
+                            {
+                                "error": str(exc),
+                                "retryable": exc.retryable,
+                                "retry_number": api_attempt,
+                            },
+                        )
+                        if not exc.retryable or api_attempt == self.config.api_retries:
+                            raise
+                        time.sleep(self.config.api_retry_delay_sec * (api_attempt + 1))
+                        runtime = (
+                            output.parent
+                            / f"{role}-runtime"
+                            / f"attempt-{attempt:03d}"
+                            / f"api-retry-{api_attempt + 1:03d}"
+                        )
+                        temporary = runtime / "output"
                 validate(temporary)
             except (ValueError, FileNotFoundError, KeyError) as exc:
                 write_json(

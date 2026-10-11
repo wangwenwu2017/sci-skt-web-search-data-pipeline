@@ -69,7 +69,7 @@ class RecoveryTests(unittest.TestCase):
 
         with self.assertRaises(KeyboardInterrupt):
             produce_task(self.request, self.run, RunConfig(), Interrupted())
-        path = next((self.run / "tasks").rglob("instruction.md"))
+        path = self.run / "tasks/test/revision-000/author/tasks/test/task/instruction.md"
         path.write_text("tampered")
         result = produce_task(self.request, self.run, RunConfig(), MockBackend())
         self.assertEqual(result.status, "failed")
