@@ -17,3 +17,10 @@ credentials.json
 build/
 dist/
 .ruff_cache/
+
+# Publish the task-synthesis skill with the adapter branch.
+!.agents/
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/sci-task-synthesis/
