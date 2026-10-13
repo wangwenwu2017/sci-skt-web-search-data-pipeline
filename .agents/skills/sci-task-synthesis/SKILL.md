@@ -16,10 +16,10 @@ Create one or more package directories under the run, each with `PACKAGE.md` ide
 Write seeds JSONL with exactly one string field per row:
 
 ```json
-{"package_uri":"packages/scientific-material"}
+{"package_uri":"scientific-material"}
 ```
 
-Relative URIs resolve against `source_root`; absolute URIs must resolve to supplied packages. Create JSON configuration using `mode: harbor`, `generate_skills: false`, a bounded `tasks_per_package`, and native review/revision/time budgets. See [Harbor configuration](../../../examples/pipeline/harbor.json) for supported options. Package count times `tasks_per_package` is a generation target, not guaranteed yield.
+Use a dedicated input root, for example `source_root: seed/sci-skt/packages` with the package in `seed/sci-skt/packages/scientific-material/`. Do not use the run root (`.`) or its ancestor: it would include native outputs in the input snapshot. Relative URIs resolve against this input root; absolute URIs must resolve to supplied packages. Place seeds JSONL at `seed/sci-skt/seeds.jsonl` and config at `seed/sci-skt/config.json`. Create JSON configuration using `mode: harbor`, `generate_skills: false`, a bounded `tasks_per_package`, and native review/revision/time budgets. See [Harbor configuration](../../../examples/pipeline/harbor.json) for supported options. Package count times `tasks_per_package` is a generation target, not guaranteed yield.
 
 This task-synthesis integration does not expose `sci-source` discovery as a host operation. If materials are missing, report the needed sources or use an already-authorized preparation method; do not switch to mock or claim links were read when unavailable. No credentials belong in packages or JSON config.
 
@@ -35,4 +35,4 @@ Keep `ABSENT_ENV` nonexistent so the injected host environment is used instead o
 
 ## Results
 
-Use the actual native run directory reported by the CLI. `tasks/<task-id>/result.json` provides `status`, `validated` and `task_package_uri`. Eligible results must be `accepted`, `validated: true`, and real Harbor mode, with actual Builder/Reviewer evidence. Preserve native logs, controls, rejections and partial yield. Mock success and source packages are not verified tasks. In TTF, evidence remains under `native/sci-skt/`; the host collects eligible tasks into `tasks/` and writes `task_manifest.json`. This is native task validation, not an independent Codex solver trajectory.
+Use the actual native run directory reported by the CLI. `tasks/<task-id>/result.json` provides `status`, `validated` and `task_package_uri`. Eligible results must be `accepted`, `validated: true`, and real Harbor mode, with actual Builder/Reviewer evidence. Preserve native logs, controls, rejections and partial yield. Mock success and source packages are not verified tasks. In TTF, evidence remains under `sci-skt/`; the host collects eligible tasks into `tasks/` and writes `task_manifest.json`. This is native task validation, not an independent Codex solver trajectory.
