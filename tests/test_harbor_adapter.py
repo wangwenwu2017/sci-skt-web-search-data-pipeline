@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from harbor.models.job.config import JobConfig
+from pydantic import ValidationError
 
 from sci_pipeline.artifacts import write_json
 from sci_pipeline.config import ApiSettings, RunConfig
@@ -35,6 +36,23 @@ class HarborAdapterTests(unittest.TestCase):
         config = JobConfig.model_validate({"agents": [self.runner.codex()]})
         self.assertNotIn("fixture-secret", config.model_dump_json())
         self.assertIn("${OPENAI_API_KEY}", config.model_dump_json())
+
+    def test_default_reasoning_effort_is_not_forwarded(self):
+        self.assertIsNone(self.runner.config.reasoning_effort)
+        self.assertNotIn("reasoning_effort", self.runner.codex()["kwargs"])
+
+    def test_explicit_reasoning_effort_survives_native_job_config(self):
+        config = RunConfig.model_validate_json(
+            RunConfig(mode="harbor", reasoning_effort="high").model_dump_json()
+        )
+        agent = HarborRunner(config, self.api).codex()
+        job = JobConfig.model_validate({"agents": [agent]})
+        self.assertEqual(job.agents[0].kwargs["reasoning_effort"], "high")
+        self.assertEqual(job.agents[0].kwargs["web_search"], "disabled")
+
+    def test_invalid_reasoning_effort_is_rejected(self):
+        with self.assertRaises(ValidationError):
+            RunConfig(reasoning_effort="turbo")
 
     def test_role_receives_scoped_credentials_only(self):
         def popen(command, *, env, **kwargs):

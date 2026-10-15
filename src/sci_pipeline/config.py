@@ -3,6 +3,7 @@
 import os
 import re
 from pathlib import Path
+from typing import Literal
 
 from dotenv import dotenv_values
 from pydantic import BaseModel, ConfigDict, Field, SecretStr, field_validator
@@ -20,6 +21,9 @@ class RunConfig(BaseModel):
     role_timeout_sec: int = Field(default=1800, ge=30)
     validation_timeout_sec: int = Field(default=1800, ge=30)
     codex_version: str = Field(default="0.154.0", pattern=r"^\d+\.\d+\.\d+$")
+    reasoning_effort: (
+        Literal["none", "minimal", "low", "medium", "high", "xhigh", "max"] | None
+    ) = None
     role_image: str = Field(
         default="sci-pipeline/role:codex-0.154.0", pattern=r"^[A-Za-z0-9][A-Za-z0-9._/@:-]*$"
     )

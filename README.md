@@ -75,6 +75,8 @@ Conda 管解释器，uv 管应用依赖。`--inexact` 保留 Conda 安装工具�
 
 这些 skill 是真实角色的指令源，mock 不调用模型，也不执行 skill。真实 harness 使用 Harbor 内置 Codex 适配器，各角色独立容器与上下文。Codex CLI 不属于 Python 包依赖，角色镜像固定 `0.154.0`。
 
+真实运行配置可选 `"reasoning_effort": "high"`，由 Harbor 传给各角色的 Codex。省略或设为 `null` 时保留 Codex 默认行为；可选值为 `none`、`minimal`、`low`、`medium`、`high`、`xhigh`、`max`，实际取值需由模型服务支持。模型服务还须兼容 Codex 使用的 Responses API、流式响应和工具调用，仅支持 Chat Completions 不足以运行这些角色。
+
 运行配置支持自由文本 `difficulty_guidance`，用于引导出题挑战；留空不指定额外难度偏好。真实示例配置已填入第一版 TB-Science v0.1 引导，依据全部 70 题分析，见[难度设计与全量调研](docs/design/19-difficulty-guidance.md)。可以直接替换该字段，不需要修改 skill 或原始输入包。
 
 不设主观难度配额。参考解、空提交和错误提交的程序化自测已接入；正式 Solver 试做、Gym rollout 和难度校准后置。难度引导不会把未经试做的任务标为已校准。

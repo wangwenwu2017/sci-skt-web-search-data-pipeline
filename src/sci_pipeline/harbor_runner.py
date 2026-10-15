@@ -173,11 +173,14 @@ class HarborRunner:
         return result
 
     def codex(self) -> dict:
+        kwargs = {"version": self.config.codex_version, "web_search": "disabled"}
+        if self.config.reasoning_effort is not None:
+            kwargs["reasoning_effort"] = self.config.reasoning_effort
         return {
             "name": "codex",
             "model_name": self.api.model,
             "override_timeout_sec": self.config.role_timeout_sec,
-            "kwargs": {"version": self.config.codex_version, "web_search": "disabled"},
+            "kwargs": kwargs,
             "env": {"OPENAI_API_KEY": "${OPENAI_API_KEY}", "OPENAI_BASE_URL": "${OPENAI_BASE_URL}"}
             if self.api.base_url
             else {"OPENAI_API_KEY": "${OPENAI_API_KEY}"},
